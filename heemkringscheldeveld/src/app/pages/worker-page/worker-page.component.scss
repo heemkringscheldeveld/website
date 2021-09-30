@@ -1,0 +1,45 @@
+main {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > div {
+   text-align: center;
+
+   .icon{
+      color: lightseagreen;
+   }
+   
+    img {
+      height: 100px;
+    }
+  }
+}
+
+nav {
+   padding: 25px;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   
+   img {
+      height: 45px;
+   }
+   a {
+      transition: .3s ease;
+      font-size: 1rem;
+      font-weight: 500;
+      background-color: lightseagreen;
+      color: rgb(40, 40, 40);
+      border-radius: 20px;
+      padding: 5px 12px;
+      text-decoration: none;
+
+      &:hover{
+         opacity: .8;
+      }
+   }
+}
