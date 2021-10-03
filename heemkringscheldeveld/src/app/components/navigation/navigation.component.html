@@ -1,0 +1,9 @@
+<nav>
+   <div class="logo">
+      <img src="../assets/media/logo.jpg" alt="Heemkring Scheldeveld logo"> <a>Heemkring Scheldeveld</a>
+   </div>
+   <span class="spacer"></span>
+   <button *ngIf="!disabled" mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+   </button>
+</nav>

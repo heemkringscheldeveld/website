@@ -1,7 +1,27 @@
-.spacer {
-  flex: 1 1 auto;
+@import "../variables.scss";
+
+.app-container {
+  // background-color: rgb(240,240,240);
+  background-color: white;
+  min-height: 100vh;
 }
 
-  img {
-    height: 50px;
+.link-container {
+  @include primary-background;
+  
+  .links {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    
+    a {
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      width: 100%;
+      padding: 15px 60px;
+      font-size: 1.2rem;
+    }
   }
+}

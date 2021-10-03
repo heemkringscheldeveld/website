@@ -1,26 +1,17 @@
-<app-worker-page *ngIf="showWorkingPage"></app-worker-page>
-
-<mat-drawer-container *ngIf="!showWorkingPage" class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <ul class="">
-      <li>Home</li>
-    </ul>
-  </mat-drawer>
-
-  <nav>
-    <div>
-      <a href="/"><img src="../assets/media/logo.jpg" alt="Heemkring Scheldeveld logo"></a>
-      <span>Heemkring Scheldeveld</span>
-    </div>
-  </nav>
-
-  <!-- <mat-toolbar>
-    <a href="/"><img src="../assets/media/logo.jpg" alt="Heemkring Scheldeveld logo"></a>
-    <span>Heemkring Scheldeveld</span>
-    <span class="spacer"></span>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-  </mat-toolbar> -->
-  <router-outlet></router-outlet>
-</mat-drawer-container>
+  <app-navigation [drawer]="drawer" [disabled]="showWorkingPage"></app-navigation>
+  
+  <mat-sidenav-container class="app-container">
+    <mat-sidenav-content>
+      <app-worker-page *ngIf="showWorkingPage"></app-worker-page>
+      <router-outlet *ngIf="!showWorkingPage"></router-outlet>
+    </mat-sidenav-content>
+    
+    <mat-sidenav #drawer class="link-container" mode="over">
+      <div class="links">
+        <a href="/home">Home</a>
+        <a href="/contact">Contact</a>
+      </div>
+    </mat-sidenav>
+  </mat-sidenav-container>
+  
+  <app-footer></app-footer>

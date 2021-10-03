@@ -15,13 +15,17 @@ import { MatMenuModule } from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WorkerPageComponent } from './pages/worker-page/worker-page.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     PageBaseComponent,
-    WorkerPageComponent
+    WorkerPageComponent,
+    NavigationComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

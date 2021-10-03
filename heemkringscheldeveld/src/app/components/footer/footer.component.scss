@@ -1,0 +1,12 @@
+@import "../../../variables.scss";
+
+footer {
+   text-align: center;
+   padding: 20px;
+   width: 100%;
+   background-color: white;
+
+   position: absolute;
+   bottom: 0;
+   z-index: 2;
+}
