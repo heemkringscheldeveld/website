@@ -17,6 +17,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WorkerPageComponent } from './pages/worker-page/worker-page.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { ActivitiesPageComponent } from './pages/activities-page/activities-page.component';
+import { GemeenteDetailPageComponent } from './pages/gemeente-detail-page/gemeente-detail-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { FooterComponent } from './components/footer/footer.component';
     PageBaseComponent,
     WorkerPageComponent,
     NavigationComponent,
-    FooterComponent
+    FooterComponent,
+    ContactPageComponent,
+    ActivitiesPageComponent,
+    GemeenteDetailPageComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
