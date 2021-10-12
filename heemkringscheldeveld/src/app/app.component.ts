@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'heemkringscheldeveld';
-  showWorkingPage = true;
+  showWorkingPage = false;
 }
