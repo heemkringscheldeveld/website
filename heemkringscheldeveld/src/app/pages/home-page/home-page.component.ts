@@ -45,7 +45,7 @@ export class HomePageComponent implements OnInit {
           'fill-opacity': [
             'case',
             ['boolean', ['feature-state', 'hover'], false],
-            .8,
+            .7,
             0.5
           ]
         }
