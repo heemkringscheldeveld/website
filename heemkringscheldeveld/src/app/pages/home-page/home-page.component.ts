@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as mapboxgl from 'mapbox-gl';
 
 @Component({
@@ -9,7 +10,7 @@ import * as mapboxgl from 'mapbox-gl';
 export class HomePageComponent implements OnInit {
   private hoveredStateId = null;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
@@ -22,10 +23,9 @@ export class HomePageComponent implements OnInit {
       container: 'map',
       style: 'mapbox://styles/maartenbrysbaert/ckulocs1i0myj17o76jzq5em5',
       center: [3.653177890947404, 50.99346548337044],
-      zoom: 10.5
+      zoom: 10.6,
+      interactive: false
     });
-
-    map.scrollZoom.disable();
 
     map.on('load', () => {
       map.addSource('states', {
@@ -95,7 +95,13 @@ export class HomePageComponent implements OnInit {
       });
 
       map.on('click', 'state-fills', e => {
-        alert(e.features[0].properties.NAME);
+        map.flyTo({
+          center: [e.lngLat.lng, e.lngLat.lat],
+          zoom: 11.5
+        });
+        const router = this.router;
+        const path = e.features[0].properties.path;
+        setTimeout(() => router.navigate(['gemeente', path]), 500);
       })
     });
   }

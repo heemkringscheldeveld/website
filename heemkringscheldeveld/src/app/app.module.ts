@@ -33,7 +33,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
     ContactPageComponent,
     ActivitiesPageComponent,
     GemeenteDetailPageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
   ],
   imports: [
     BrowserModule,

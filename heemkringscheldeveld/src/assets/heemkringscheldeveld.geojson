@@ -214,7 +214,7 @@
           ]
         ]
       },
-      "properties": { "NAME": "De Pinte" },
+      "properties": { "name": "De Pinte", "path": "de-pinte" },
       "id": 1
     },
     {
@@ -468,7 +468,7 @@
           ]
         ]
       },
-      "properties": { "NAME": "Afsnee" },
+      "properties": { "name": "Afsnee", "path": "afsnee" },
       "id": 2
     },
     {
@@ -747,7 +747,7 @@
           ]
         ]
       },
-      "properties": { "NAME": "Sint-Denijs-Westrem" },
+      "properties": { "name": "Sint-Denijs-Westrem", "path": "sint-denijs-westrem" },
       "id": 3
     },
     {
@@ -905,7 +905,7 @@
           ]
         ]
       },
-      "properties": { "NAME": "Deurle" },
+      "properties": { "name": "Deurle", "path": "deurle" },
       "id": 4
     },
     {
@@ -1098,7 +1098,7 @@
           ]
         ]
       },
-      "properties": { "NAME": "Eke" },
+      "properties": { "name": "Eke", "path": "eke" },
       "id": 5
     },
     {
@@ -1358,7 +1358,7 @@
           ]
         ]
       },
-      "properties": { "NAME": "Nazareth" },
+      "properties": { "name": "Nazareth", "path": "nazareth" },
       "id": 6
     },
     {
@@ -1609,7 +1609,7 @@
           ]
         ]
       },
-      "properties": { "NAME": "Sint-Martens-Latem" },
+      "properties": { "name": "Sint-Martens-Latem", "path": "sint-denijs-westrem" },
       "id": 7
     },
     {
@@ -1788,7 +1788,7 @@
           ]
         ]
       },
-      "properties": { "NAME": "Zevergem" },
+      "properties": { "name": "Zevergem", "path": "zevergem" },
       "id": 8
     },
     {
@@ -2060,7 +2060,7 @@
           ]
         ]
       },
-      "properties": { "NAME": "Zwijnaarde" },
+      "properties": { "name": "Zwijnaarde", "path": "zwijnaarde" },
       "id": 9
     }
   ]
