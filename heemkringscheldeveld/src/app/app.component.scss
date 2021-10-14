@@ -8,6 +8,8 @@
 
 .link-container {
   @include primary-background;
+
+  position: fixed;
   
   .links {
     display: flex;

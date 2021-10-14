@@ -4,15 +4,15 @@
     <mat-sidenav-content>
       <app-worker-page *ngIf="showWorkingPage"></app-worker-page>
       <router-outlet *ngIf="!showWorkingPage"></router-outlet>
+      <app-footer></app-footer>
     </mat-sidenav-content>
     
-    <mat-sidenav #drawer class="link-container" mode="over">
+    <mat-sidenav #drawer class="link-container" mode="over" position="start">
       <div class="links">
-        <a href="/home">Home</a>
+        <a href="">Home</a>
         <a href="/activities">Activiteiten</a>
         <a href="/contact">Contact</a>
       </div>
     </mat-sidenav>
   </mat-sidenav-container>
   
-  <app-footer></app-footer>

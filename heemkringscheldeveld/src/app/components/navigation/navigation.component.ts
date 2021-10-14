@@ -13,6 +13,11 @@ export class NavigationComponent implements OnInit {
   @Input() public disabled: boolean = false;
 
   ngOnInit(): void {
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      window.scrollY != 0
+        ? nav.classList.add('background')
+        : nav.classList.remove('background');
+    })
   }
-
 }

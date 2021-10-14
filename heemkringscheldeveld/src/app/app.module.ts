@@ -21,6 +21,7 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { ActivitiesPageComponent } from './pages/activities-page/activities-page.component';
 import { GemeenteDetailPageComponent } from './pages/gemeente-detail-page/gemeente-detail-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
     ActivitiesPageComponent,
     GemeenteDetailPageComponent,
     NotFoundPageComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,7 @@ export class MapComponent implements OnInit {
 
   constructor(private router: Router) {
   }
-  
+
   ngOnInit(): void {
     this.initMapbox();
     console.log('init');
@@ -101,7 +101,7 @@ export class MapComponent implements OnInit {
       });
 
       map.on('click', 'state-fills', e => {
-        
+
         map.flyTo({
           center: [e.lngLat.lng, e.lngLat.lat],
           zoom: 11.5
@@ -109,7 +109,7 @@ export class MapComponent implements OnInit {
 
         const router = this.router;
         const path = e.features[0].properties.path;
-        router.navigate([path]);
+        router.navigate(['gemeente', path]);
         // setTimeout(() => router.navigate([path]), 500);
       })
     });
