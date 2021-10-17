@@ -2,14 +2,16 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import "variables";
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
-@import "variables";
+// Importing Material styles
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-.primary-color {
+.primary-color, .primary {
    @include primary-color;
 }
 .primary-background {

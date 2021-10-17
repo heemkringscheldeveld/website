@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Contact } from 'src/app/models/contact';
 
 @Component({
   selector: 'app-contact-page',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactPageComponent implements OnInit {
 
-  constructor() { }
+  public form: FormGroup;
+  public contacts: Contact[] = [
+    { name: "Carlos Vermeiren", function: "voorzitter", address: "Kerkdreefken 4 – 9840 Zevergem", phone: "0497 19 70 39", email: "carlos.vermeiren@hotmail.com" },
+    { name: "Rudy Pieters", function: "secretaris", address: "Reevijver 36 - 9840 De Pinte", phone: "0473 99 87 90", email: "rudy.pieters@skynet.be" },
+    { name: "Johan Van Twembeke", function: "redactie jaarboek", address: "Hugo Verriestlaan 57 - 9840 De Pinte", phone: "09 282 70 42", email: "johan.vantwembeke@skynet.be" }
+  ]
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.initForm();
+  }
+
+  private initForm = () => {
+    this.form = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      name: ['', Validators.required],
+      message: ['', Validators.required]
+    })
   }
 
 }

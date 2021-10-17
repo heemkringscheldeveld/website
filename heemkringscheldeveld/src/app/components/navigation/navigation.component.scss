@@ -15,6 +15,11 @@ button {
 .logo {
    display: flex;
    align-items: center;
+   
+   &--name{
+      box-shadow: 0px 5px 10px 0px rgba($color: #000000, $alpha: .1);
+      transition: .3s ease;
+   }
 }
 
 .background {
@@ -48,12 +53,13 @@ nav {
       padding: 4px 11px;
       color: white;
       text-decoration: none;
-      opacity: .7;
+      // opacity: .7;
       
       &:hover{
          // color: rgb(40, 40, 40);
          color: white;
          opacity: 1;
+         box-shadow: 0px 10px 15px 0px rgba($color: #000000, $alpha: .15);
       }
    }
 }

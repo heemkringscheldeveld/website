@@ -1,0 +1,9 @@
+@import '../../../variables.scss';
+@import '~bootstrap/scss/bootstrap-grid.scss';
+
+.contact {
+   border: 1px solid $secondary;
+   background-color: rgba($color: $secondary, $alpha: .1);
+   list-style-type: none;
+   border-radius: 2px;
+}

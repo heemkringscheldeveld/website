@@ -1,3 +1,30 @@
-<app-page-base title="WIP">
+<app-page-base title="Contact"></app-page-base>
 
-</app-page-base>
+<section class="container">
+   <div class="row">
+      <p class="text-center col-12 mb-5 h6">Vraagje?<br>Contacteer ons via onderstaand formulier of contactgegevens.</p>
+      <div class="form col-12 col-md-6" [formGroup]="form">
+         <mat-form-field appearance="fill" class="w-100" color="primary">
+            <mat-label>Email</mat-label>
+            <input type="email" matInput placeholder="pat@example.com" formControlName="email" required>
+            <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+         </mat-form-field>
+         <mat-form-field appearance="fill" class="w-100" color="primary">
+            <mat-label>Naam</mat-label>
+            <input type="text" matInput formControlName="name" required>
+            <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+         </mat-form-field>
+         <mat-form-field appearance="fill" class="w-100" color="primary">
+            <mat-label>Bericht</mat-label>
+            <textarea matInput formControlName="message" required rows="6"></textarea>
+         </mat-form-field>
+         <button class="btn btn-primary" [disabled]="!form.valid">Verstuur</button>
+      </div>
+      <div class="contact-info col-12 col-md-6 mt-4 mt-md-0">
+         <div *ngFor="let contact of contacts" class="contact py-2 px-3 mb-2">
+            <strong class="text-secondary">{{contact.name}} </strong><span class="text-muted">({{contact.function}})</span>
+            <p class="m-0 mt-2">{{contact.phone}}<br><a href="mailto:{{contact.email}}">{{contact.email}}</a></p>
+         </div>
+      </div>
+   </div>
+</section>

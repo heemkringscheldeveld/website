@@ -12,7 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { WorkerPageComponent } from './pages/worker-page/worker-page.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -22,6 +22,9 @@ import { ActivitiesPageComponent } from './pages/activities-page/activities-page
 import { GemeenteDetailPageComponent } from './pages/gemeente-detail-page/gemeente-detail-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { MapComponent } from './components/map/map.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,8 @@ import { MapComponent } from './components/map/map.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     MatToolbarModule,
     MatIconModule,
@@ -48,9 +53,12 @@ import { MapComponent } from './components/map/map.component';
     MatButtonToggleModule,
     MatMenuModule,
     MatSidenavModule,
+    MatFormFieldModule,
+    MatInputModule,
+
     NgbModule
   ],
-  providers: [],
+  providers: [FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
