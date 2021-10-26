@@ -25,6 +25,8 @@ import { MapComponent } from './components/map/map.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
     GemeenteDetailPageComponent,
     NotFoundPageComponent,
     MapComponent,
+    AboutPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
 
     MatToolbarModule,
     MatIconModule,
@@ -58,7 +62,7 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
     NgbModule
   ],
-  providers: [FormBuilder],
+  providers: [FormBuilder, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

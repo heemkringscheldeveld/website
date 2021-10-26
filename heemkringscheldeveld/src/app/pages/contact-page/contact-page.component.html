@@ -18,12 +18,12 @@
             <mat-label>Bericht</mat-label>
             <textarea matInput formControlName="message" required rows="6"></textarea>
          </mat-form-field>
-         <button class="btn btn-primary" [disabled]="!form.valid">Verstuur</button>
+         <button class="btn btn-primary" [disabled]="!form.valid" (click)="sendMail()">Verstuur</button>
       </div>
       <div class="contact-info col-12 col-md-6 mt-4 mt-md-0">
          <div *ngFor="let contact of contacts" class="contact py-2 px-3 mb-2">
-            <strong class="text-secondary">{{contact.name}} </strong><span class="text-muted">({{contact.function}})</span>
-            <p class="m-0 mt-2">{{contact.phone}}<br><a href="mailto:{{contact.email}}">{{contact.email}}</a></p>
+            <strong class="text-secondary">{{contact.name}} </strong><span *ngIf="contact.function" class="text-muted">({{contact.function}})</span>
+            <p class="m-0 mt-2">{{contact.phone}}<br *ngIf="contact.phone"><a href="mailto:{{contact.email}}">{{contact.email}}</a></p>
          </div>
       </div>
    </div>
