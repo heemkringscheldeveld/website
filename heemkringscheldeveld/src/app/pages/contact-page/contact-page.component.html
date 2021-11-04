@@ -3,7 +3,7 @@
 <section class="container">
    <div class="row">
       <p class="text-center col-12 mb-5 h6">Vraagje?<br>Contacteer ons via onderstaand formulier of contactgegevens.</p>
-      <form class="form col-12 col-md-6" [formGroup]="form" name="contact" method="POST" action="/thank-you" data-netlify="true">
+      <form class="form col-12 col-md-6" [formGroup]="form" name="contact" action="/thank-you" data-netlify="true" netlify>
          <mat-form-field appearance="fill" class="w-100" color="primary">
             <mat-label>Email</mat-label>
             <input type="email" name="email" matInput placeholder="pat@example.com" formControlName="email" required>
