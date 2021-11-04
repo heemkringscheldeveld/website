@@ -29,8 +29,9 @@ export class ContactPageComponent implements OnInit {
 
   public sendMail() {
     const formValue = this.form.getRawValue();
-    this.mail.send(formValue.message, formValue.email, formValue.name)
-      .subscribe(() => console.log('Mail sent!'), error => console.log('Failed to send mail.'));
+    console.log("mail sent!");
+    // this.mail.send(formValue.message, formValue.email, formValue.name)
+    //   .subscribe(() => console.log('Mail sent!'), error => console.log('Failed to send mail.'));
   }
 
   private initForm = () => {

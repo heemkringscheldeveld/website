@@ -3,23 +3,23 @@
 <section class="container">
    <div class="row">
       <p class="text-center col-12 mb-5 h6">Vraagje?<br>Contacteer ons via onderstaand formulier of contactgegevens.</p>
-      <div class="form col-12 col-md-6" [formGroup]="form">
+      <form class="form col-12 col-md-6" [formGroup]="form" name="contact" method="POST" data-netlify="true">
          <mat-form-field appearance="fill" class="w-100" color="primary">
             <mat-label>Email</mat-label>
-            <input type="email" matInput placeholder="pat@example.com" formControlName="email" required>
+            <input type="email" name="email" matInput placeholder="pat@example.com" formControlName="email" required>
             <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
          </mat-form-field>
          <mat-form-field appearance="fill" class="w-100" color="primary">
             <mat-label>Naam</mat-label>
-            <input type="text" matInput formControlName="name" required>
+            <input type="text" name="name" matInput formControlName="name" required>
             <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
          </mat-form-field>
          <mat-form-field appearance="fill" class="w-100" color="primary">
             <mat-label>Bericht</mat-label>
-            <textarea matInput formControlName="message" required rows="6"></textarea>
+            <textarea matInput name="message" formControlName="message" required rows="6"></textarea>
          </mat-form-field>
-         <button class="btn btn-primary" [disabled]="!form.valid" (click)="sendMail()">Verstuur</button>
-      </div>
+         <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="sendMail()">Verstuur</button>
+      </form>
       <div class="contact-info col-12 col-md-6 mt-4 mt-md-0">
          <div *ngFor="let contact of contacts" class="contact py-2 px-3 mb-2">
             <strong class="text-secondary">{{contact.name}} </strong><span *ngIf="contact.function" class="text-muted">({{contact.function}})</span>
