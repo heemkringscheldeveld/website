@@ -27,6 +27,7 @@ import { MatInputModule } from '@angular/material/input';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { ThankYouPageComponent } from './pages/thank-you-page/thank-you-page.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
     NotFoundPageComponent,
     MapComponent,
     AboutPageComponent,
+    ThankYouPageComponent,
   ],
   imports: [
     BrowserModule,

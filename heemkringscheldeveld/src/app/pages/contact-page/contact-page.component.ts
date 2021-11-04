@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Contact } from 'src/app/models/contact';
 import { MailService } from 'src/app/services/mail.service';
 
@@ -20,7 +21,8 @@ export class ContactPageComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private mail: MailService
+    private mail: MailService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +32,7 @@ export class ContactPageComponent implements OnInit {
   public sendMail() {
     const formValue = this.form.getRawValue();
     console.log("mail sent!");
+    this.router.navigate(['thank-you']);
     // this.mail.send(formValue.message, formValue.email, formValue.name)
     //   .subscribe(() => console.log('Mail sent!'), error => console.log('Failed to send mail.'));
   }

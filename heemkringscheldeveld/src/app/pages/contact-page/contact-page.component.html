@@ -3,7 +3,7 @@
 <section class="container">
    <div class="row">
       <p class="text-center col-12 mb-5 h6">Vraagje?<br>Contacteer ons via onderstaand formulier of contactgegevens.</p>
-      <form class="form col-12 col-md-6" [formGroup]="form" name="contact" method="POST" data-netlify="true">
+      <form class="form col-12 col-md-6" [formGroup]="form" name="contact" method="POST" action="/thank-you" data-netlify="true">
          <mat-form-field appearance="fill" class="w-100" color="primary">
             <mat-label>Email</mat-label>
             <input type="email" name="email" matInput placeholder="pat@example.com" formControlName="email" required>
@@ -18,7 +18,7 @@
             <mat-label>Bericht</mat-label>
             <textarea matInput name="message" formControlName="message" required rows="6"></textarea>
          </mat-form-field>
-         <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="sendMail()">Verstuur</button>
+         <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Verstuur</button>
       </form>
       <div class="contact-info col-12 col-md-6 mt-4 mt-md-0">
          <div *ngFor="let contact of contacts" class="contact py-2 px-3 mb-2">

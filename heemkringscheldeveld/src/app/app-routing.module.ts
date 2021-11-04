@@ -5,6 +5,7 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { GemeenteDetailPageComponent } from './pages/gemeente-detail-page/gemeente-detail-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { ThankYouPageComponent } from './pages/thank-you-page/thank-you-page.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactPageComponent },
   { path: 'gemeente/:name', component: GemeenteDetailPageComponent },
   { path: 'over', component: AboutPageComponent },
+  { path: 'thank-you', component: ThankYouPageComponent },
   { path: '404', component: NotFoundPageComponent },
   { path: '**', redirectTo: '404' }
 ];
