@@ -121,7 +121,7 @@ export class MapComponent implements OnInit {
 
         const router = this.router;
         const path = e.features[0].properties.path;
-        // router.navigate(['gemeente', path]);
+        router.navigate(['gemeente', path]);
         // setTimeout(() => router.navigate([path]), 500);
       });
 
