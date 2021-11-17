@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 exports.handler = function (event, context) {
   console.log(event.body);
   const body = JSON.parse(event.body);
-  const payload = body.payload;
+  console.log(body);
   const transporter = getTransporter();
 
   transporter.verify(function (error, success) {
@@ -14,7 +14,7 @@ exports.handler = function (event, context) {
     }
   });
 
-  sendContactMail(transporter, payload.data);
+  sendContactMail(transporter, body);
 };
 
 function getTransporter() {
