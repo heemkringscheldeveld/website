@@ -747,7 +747,10 @@
           ]
         ]
       },
-      "properties": { "name": "Sint-Denijs-Westrem", "path": "sint-denijs-westrem" },
+      "properties": {
+        "name": "Sint-Denijs-Westrem",
+        "path": "sint-denijs-westrem"
+      },
       "id": 3
     },
     {
@@ -1609,7 +1612,10 @@
           ]
         ]
       },
-      "properties": { "name": "Sint-Martens-Latem", "path": "sint-denijs-westrem" },
+      "properties": {
+        "name": "Sint-Martens-Latem",
+        "path": "sint-denijs-westrem"
+      },
       "id": 7
     },
     {
