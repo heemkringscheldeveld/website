@@ -35,7 +35,7 @@ function sendContactMail(transporter, data) {
     to: process.env.MAIL_TO,
     bcc: process.env.MAIL_BCC,
     replyTo: data.from,
-    sender: data.from,
+    sender: `<${data.name}> ${data.from}`,
     subject: `${data.name} via website.`,
     text: data.text,
   });
