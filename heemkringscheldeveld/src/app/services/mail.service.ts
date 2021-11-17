@@ -7,49 +7,53 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class MailService {
-  private url: string = "https://api.sendgrid.com/v3/mail/send";
+  // private url: string = "https://api.sendgrid.com/v3/mail/send";
   constructor(private http: HttpClient) { }
 
   public send(text: string, from: string, name: string) {
-    const payload = {
-      personalizations: [
-        {
-          to: [
-            {
-              email: 'info@heemkringscheldeveld.be'
-            }
-          ],
-          subject: `${name} via website`,
-        }
-      ],
-      from: {
-        email: 'info@heemkringscheldeveld.be'
-      },
-      content: [
-        {
-          type: "text/plain",
-          value: text
-        }
-      ],
-      reply_to: { email: from, name: name }
-    }
-    // const msg = {
-    //   to: 'info@heemkringscheldeveld.be',
-    //   from: from,
-    //   subject: `${name} via website`,
-    //   text: text,
-    //   envelope: {
-    //     from: `${from} <${from}>`,
-    //     to: 'info@heemkringscheldeveld.be'
-    //   }
-    // };
-
-    return this.http.post(
-      this.url,
-      payload,
-      { headers: new HttpHeaders({ "Content-Type": "application/json", "Authorization": `Bearer ${environment.SENDGRID_API_KEY}` }) }
-    );
+    return this.http.post("/.netlify/functions/hello-background", { text, from, name });
   }
+
+  // public send(text: string, from: string, name: string) {
+  //   const payload = {
+  //     personalizations: [
+  //       {
+  //         to: [
+  //           {
+  //             email: 'info@heemkringscheldeveld.be'
+  //           }
+  //         ],
+  //         subject: `${name} via website`,
+  //       }
+  //     ],
+  //     from: {
+  //       email: 'website@heemkringscheldeveld.be'
+  //     },
+  //     content: [
+  //       {
+  //         type: "text/plain",
+  //         value: text
+  //       }
+  //     ],
+  //     reply_to: { email: from, name: name }
+  //   }
+  // const msg = {
+  //   to: 'info@heemkringscheldeveld.be',
+  //   from: from,
+  //   subject: `${name} via website`,
+  //   text: text,
+  //   envelope: {
+  //     from: `${from} <${from}>`,
+  //     to: 'info@heemkringscheldeveld.be'
+  //   }
+  // };
+
+  // return this.http.post(
+  //   this.url,
+  //   payload,
+  //   { headers: new HttpHeaders({ "Content-Type": "application/json", "Authorization": `Bearer ${environment.SENDGRID_API_KEY}` }) }
+  // );
+// }
 
   // constructor() {
   //   sgMail.setApiKey(environment.SENDGRID_API_KEY)

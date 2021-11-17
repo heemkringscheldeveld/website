@@ -1,6 +1,7 @@
 const nodemailer = require("nodemailer");
 
 exports.handler = function (event, context) {
+  console.log(event.body);
   const body = JSON.parse(event.body);
   const payload = body.payload;
   const transporter = getTransporter();
@@ -13,11 +14,7 @@ exports.handler = function (event, context) {
     }
   });
 
-  console.log(`Sending ${payload.form_name} mail...`);
-
-  if (payload.form_name == "contact") {
-    sendContactMail(transporter, payload.data);
-  }
+  sendContactMail(transporter, payload.data);
 };
 
 function getTransporter() {
@@ -37,9 +34,9 @@ function sendContactMail(transporter, data) {
     from: process.env.MAIL_FROM,
     to: process.env.MAIL_TO,
     bcc: process.env.MAIL_BCC,
-    replyTo: data.email,
-    sender: data.email,
-    subject: `${data.subject} via website.`,
-    text: data.message,
+    replyTo: data.from,
+    sender: data.from,
+    subject: `${data.name} via website.`,
+    text: data.text,
   });
 }

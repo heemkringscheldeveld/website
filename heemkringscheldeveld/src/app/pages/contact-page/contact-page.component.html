@@ -3,7 +3,7 @@
 <section class="container">
    <div class="row">
       <p class="text-center col-12 mb-5 h6">Vraagje?<br>Contacteer ons via onderstaand formulier of contactgegevens.</p>
-      <!-- <form class="form col-12 col-md-6" name="contact-form" method="POST" data-netlify="true">
+      <form class="form col-12 col-md-6" name="contact-form" method="POST" data-netlify="true">
          <ng-container [formGroup]="form">
             <mat-form-field appearance="fill" class="w-100" color="primary">
                <mat-label>Email</mat-label>
@@ -17,18 +17,18 @@
                <mat-label>Bericht</mat-label>
                <textarea matInput name="message" formControlName="message" required rows="6"></textarea>
             </mat-form-field>
-            <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Verstuur</button>
+            <button type="submit" (click)="sendMail()" class="btn btn-primary" [disabled]="!form.valid">Verstuur</button>
          </ng-container>
-      </form> -->
-      <form [formGroup]="form" class="form col-12 col-md-6" name="contact-form" method="POST" data-netlify="true">
+      </form>
+      <!-- <form [formGroup]="form" class="form col-12 col-md-6" name="contact-form" method="POST" data-netlify="true">
          <label>Email</label>
          <input type="email" name="email" placeholder="pat@example.com" formControlName="email" required>
          <label>Naam</label>
          <input type="text" name="name" formControlName="name" required>
          <label>Bericht</label>
          <textarea name="message" formControlName="message" required rows="6"></textarea>
-         <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Verstuur</button>
-      </form>
+         <button type="submit" class="btn btn-primary" (click)="sendMail()"  [disabled]="!form.valid">Verstuur</button>
+      </form> -->
       <div class="contact-info col-12 col-md-6 mt-4 mt-md-0">
          <div *ngFor="let contact of contacts" class="contact py-2 px-3 mb-2">
             <strong class="text-secondary">{{contact.name}} </strong><span *ngIf="contact.function" class="text-muted">({{contact.function}})</span>

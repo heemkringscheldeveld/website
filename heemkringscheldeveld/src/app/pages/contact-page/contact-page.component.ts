@@ -21,21 +21,21 @@ export class ContactPageComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    // private mail: MailService,
-    // private router: Router
+    private mail: MailService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.initForm();
   }
 
-  // public sendMail() {
-  //   const formValue = this.form.getRawValue();
-  //   console.log("mail sent!");
-  //   this.router.navigate(['thank-you']);
-  //   // this.mail.send(formValue.message, formValue.email, formValue.name)
-  //   //   .subscribe(() => console.log('Mail sent!'), error => console.log('Failed to send mail.'));
-  // }
+  public sendMail() {
+    const formValue = this.form.getRawValue();
+    console.log("mail sent!");
+    this.router.navigate(['thank-you']);
+    this.mail.send(formValue.message, formValue.email, formValue.name)
+      .subscribe(() => console.log('Mail sent!'), error => console.log('Failed to send mail.'));
+  }
 
   private initForm = () => {
     this.form = this.fb.group({
