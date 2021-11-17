@@ -11,7 +11,7 @@ export class MailService {
   constructor(private http: HttpClient) { }
 
   public send(text: string, from: string, name: string) {
-    return this.http.post("/.netlify/functions/hello-background", { text, from, name });
+    return this.http.post("/.netlify/functions/mail", { text, from, name });
   }
 
   // public send(text: string, from: string, name: string) {
