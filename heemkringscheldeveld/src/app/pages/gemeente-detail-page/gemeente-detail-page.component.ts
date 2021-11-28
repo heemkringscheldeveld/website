@@ -16,7 +16,7 @@ export class GemeenteDetailPageComponent implements OnInit, OnDestroy {
   public cities: City[] = cities;
 
   public get city(): City {
-    return this.cities.find(x => x.key == this.page);
+    return this.cities.find(x => x.key == this.page)
   }
   public get general(): City {
     return this.cities.find(x => x.key == 'general');

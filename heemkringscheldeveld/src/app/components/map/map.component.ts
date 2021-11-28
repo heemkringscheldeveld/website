@@ -92,7 +92,7 @@ export class MapComponent implements OnInit {
             { source: 'states', id: this.hoveredStateId },
             { hover: true }
           );
-          map.getCanvas().style.cursor = 'pointer';
+          map.getCanvas().style.cursor = 'pointer';          
           // marker.setLngLat([e.lngLat.lng, e.lngLat.lat])
           //   .addTo(map);
         }

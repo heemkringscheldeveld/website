@@ -29,3 +29,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 section {
    padding: 20px 0;
 }
+
+.btn-secondary {
+   background-color: transparentize($color: $secondary, $amount: .5);
+   border: 2px solid $secondary;
+}
+.btn-primary {
+   background-color: transparentize($color: $primary, $amount: .5);
+   border: 2px solid $primary;
+}
