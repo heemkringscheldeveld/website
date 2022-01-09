@@ -3,10 +3,6 @@
 .spacer {
    flex: 1 1 auto;
 }
-// .nav-spacer {
-//    height: 90px;
-//    width: 100%;
-// }
 
 button {
    color: black
@@ -32,8 +28,6 @@ nav {
    z-index: 2;
    padding: 25px 0px;
    position: fixed;
-   // position: absolute;
-   // background-color: white;
    top: 0;
    width: 100%;
    transition: all .2s ease;
