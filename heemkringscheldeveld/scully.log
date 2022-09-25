@@ -1,0 +1,14 @@
+No configuration for route "/gemeente/:name" found. Skipping
+
+----------------------------------
+Using stored unhandled routes!.
+   To discover new routes in the angular app use "npm run scully -- --scanRoutes"
+----------------------------------No configuration for route "/gemeente/:name" found. Skipping
+
+Route "/gemeente/De Pinte" not provided by angular app
+
+----------------------------------
+Using stored unhandled routes!.
+   To discover new routes in the angular app use "npm run scully -- --scanRoutes"
+----------------------------------No configuration for route "/gemeente/:name" found. Skipping
+

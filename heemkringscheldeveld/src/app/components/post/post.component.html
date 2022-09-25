@@ -1,0 +1,5 @@
+<div class="post">
+   <div class="d-flex justify-content-between align-items-baseline"><h2 class="text-left">{{postEntry.fields.title}}</h2><span class="text-muted">{{postEntry.sys.createdAt | date:'dd/MM/yyyy'}}</span></div>
+   <p class="text-left">{{postEntry.fields.description.content[0].content[0].value}}</p>
+   <a class="url mt-4 d-flex justify-content-end" *ngIf="postEntry.fields.url" href="{{postEntry.fields.url}}" target="_blank">{{postEntry.fields.urlTitle || 'Lees meer'}}</a>
+</div>

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  contentfulApiKey: process.env.CONTENTFUL_API_KEY
 };

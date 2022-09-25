@@ -28,6 +28,8 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { ThankYouPageComponent } from './pages/thank-you-page/thank-you-page.component';
+import { ScullyLibModule } from '@scullyio/ng-lib';
+import { PostComponent } from './components/post/post.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,7 @@ import { ThankYouPageComponent } from './pages/thank-you-page/thank-you-page.com
     MapComponent,
     AboutPageComponent,
     ThankYouPageComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,7 +65,9 @@ import { ThankYouPageComponent } from './pages/thank-you-page/thank-you-page.com
     MatFormFieldModule,
     MatInputModule,
 
-    NgbModule
+    NgbModule,
+
+    ScullyLibModule
   ],
   providers: [FormBuilder, HttpClient],
   bootstrap: [AppComponent]

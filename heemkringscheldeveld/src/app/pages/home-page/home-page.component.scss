@@ -21,3 +21,14 @@
       color: $secondary;
    } 
 }
+
+.posts {
+   margin: 0 auto;
+   width: fit-content;
+}
+
+@media only screen and (max-width: 1200px) { 
+   .posts {
+      flex-direction: column;
+   }
+}

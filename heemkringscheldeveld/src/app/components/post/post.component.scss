@@ -1,0 +1,14 @@
+@import '../../../variables.scss';
+
+.post {
+   width: 300px;
+   border: 2px solid transparentize($color: $primary, $amount: .8);
+   // background-color: transparentize($color: $primary, $amount: .8);
+   padding: 25px;
+   border-radius: 4px;
+}
+
+h2 {
+   color: $primary;
+   line-height: 20px;
+}
