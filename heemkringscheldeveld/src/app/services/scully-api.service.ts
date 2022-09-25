@@ -42,8 +42,8 @@ export class ScullyApiService {
       }
       
       // Get from api
-      const apiObservable = this.http.get<T>(url);
-      observables.push(apiObservable);
+      // const apiObservable = this.http.get<T>(url);
+      // observables.push(apiObservable);
 
       return observables;
    }
