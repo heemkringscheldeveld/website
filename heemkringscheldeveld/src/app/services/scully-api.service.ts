@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { isScullyRunning, TransferStateService } from '@scullyio/ng-lib';
 import { empty, merge, Observable } from 'rxjs';
 import { filter, shareReplay, tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
    providedIn: 'root'
@@ -14,12 +15,12 @@ export class ScullyApiService {
    ) { }
 
    public getFromState<T>(url: string): Observable<T> {
-    const urlHash = btoa(url);
-    
-    return this.transferStateService.stateHasKey(urlHash) 
-       ? this.transferStateService.getState<T>(urlHash).pipe(shareReplay(1), filter(x => x != null))
-       : empty();
- }
+      const urlHash = btoa(url);
+
+      return this.transferStateService.stateHasKey(urlHash)
+         ? this.transferStateService.getState<T>(urlHash).pipe(shareReplay(1), filter(x => x != null))
+         : empty();
+   }
 
    public getObservables<T>(url: string, setToState: boolean = true): Observable<T>[] {
       const observables: Observable<T>[] = [];
@@ -40,10 +41,12 @@ export class ScullyApiService {
             observables.push(stateObservable);
          }
       }
-      
-      // Get from api
-      // const apiObservable = this.http.get<T>(url);
-      // observables.push(apiObservable);
+
+      if (!environment.production) {
+         // Get from api
+         const apiObservable = this.http.get<T>(url);
+         observables.push(apiObservable);
+      }
 
       return observables;
    }
