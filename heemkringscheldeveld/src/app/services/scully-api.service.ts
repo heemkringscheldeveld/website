@@ -42,11 +42,11 @@ export class ScullyApiService {
          }
       }
 
-      if (!environment.production) {
-         // Get from api
-         const apiObservable = this.http.get<T>(url);
-         observables.push(apiObservable);
-      }
+      // if (!environment.production) {
+      //    // Get from api
+      //    const apiObservable = this.http.get<T>(url);
+      //    observables.push(apiObservable);
+      // }
 
       return observables;
    }
