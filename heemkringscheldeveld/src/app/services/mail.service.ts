@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 export class MailService {
   constructor(private http: HttpClient) { }
 
-  public send(text: string, from: string, name: string) {
-    return this.http.post("/.netlify/functions/mail", { text, from, name });
+  public send(text: string, from: string, name: string, captchaToken: string, hpField: string) {
+    return this.http.post("/.netlify/functions/mail", { text, from, name, captchaToken, hp_field: hpField });
   }
 }

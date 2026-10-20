@@ -3,32 +3,31 @@
 <section class="container">
    <div class="row">
       <p class="text-center col-12 mb-5 h6">Vraagje?<br>Contacteer ons via onderstaand formulier of contactgegevens.</p>
-      <form class="form col-12 col-md-6" name="contact-form" method="POST" data-netlify="true">
+      <form class="form col-12 col-md-6" name="contact-form">
          <ng-container [formGroup]="form">
             <mat-form-field appearance="fill" class="w-100" color="primary">
                <mat-label>Email</mat-label>
                <input type="email" name="email" matInput placeholder="pat@example.com" formControlName="email" required>
+               <mat-error *ngIf="form.get('email').hasError('pattern')">Geef een geldig e-mailadres in.</mat-error>
             </mat-form-field>
             <mat-form-field appearance="fill" class="w-100" color="primary">
                <mat-label>Naam</mat-label>
-               <input type="text" name="name" matInput formControlName="name" required>
+               <input type="text" name="name" matInput formControlName="name" required [maxlength]="nameMaxLength">
             </mat-form-field>
             <mat-form-field appearance="fill" class="w-100" color="primary">
                <mat-label>Bericht</mat-label>
-               <textarea matInput name="message" formControlName="message" required rows="6"></textarea>
+               <textarea matInput name="message" formControlName="message" required rows="6" [maxlength]="messageMaxLength"></textarea>
             </mat-form-field>
-            <button type="submit" (click)="sendMail()" class="btn btn-primary" [disabled]="!form.valid">Verstuur</button>
+            <div class="hp-field" aria-hidden="true">
+               <label for="hp_field">Laat dit veld leeg</label>
+               <input type="text" id="hp_field" name="hp_field" formControlName="hp_field" tabindex="-1" autocomplete="off">
+            </div>
+            <div #captcha class="mb-3"></div>
+            <p *ngIf="captchaError" class="text-danger">De beveiligingscontrole kon niet laden. Stuur je bericht naar <a href="mailto:{{generalEmail}}">{{generalEmail}}</a>.</p>
+            <p *ngIf="error" class="text-danger">{{error}}</p>
+            <button type="submit" (click)="sendMail()" class="btn btn-primary" [disabled]="!form.valid || !captchaToken || sending">Verstuur</button>
          </ng-container>
       </form>
-      <!-- <form [formGroup]="form" class="form col-12 col-md-6" name="contact-form" method="POST" data-netlify="true">
-         <label>Email</label>
-         <input type="email" name="email" placeholder="pat@example.com" formControlName="email" required>
-         <label>Naam</label>
-         <input type="text" name="name" formControlName="name" required>
-         <label>Bericht</label>
-         <textarea name="message" formControlName="message" required rows="6"></textarea>
-         <button type="submit" class="btn btn-primary" (click)="sendMail()"  [disabled]="!form.valid">Verstuur</button>
-      </form> -->
       <div class="contact-info col-12 col-md-6 mt-4 mt-md-0">
          <div *ngFor="let contact of contacts" class="contact py-2 px-3 mb-2">
             <strong class="text-secondary">{{contact.name}} </strong><span *ngIf="contact.function" class="text-muted">({{contact.function}})</span>
