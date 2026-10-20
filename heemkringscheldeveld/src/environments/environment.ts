@@ -5,8 +5,9 @@
 export const environment = {
   production: false,
   contentfulApiKey: '2OESmZQRni_NaeYz6K3fQDtsRCvUAtIZuzCf4VnVT1E',
-  // Cloudflare Turnstile test key: always passes.
-  turnstileSiteKey: '1x00000000000000000000AA'
+  // Real Turnstile site key: the Netlify build ("npm run build --prod") never applies the production
+  // configuration, so this file is what ships. For local testing, use the test key 1x00000000000000000000AA.
+  turnstileSiteKey: '0x4AAAAAAFeETBrMym3gyDCJ'
 };
 
 /*
